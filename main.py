@@ -50,14 +50,14 @@ while running:
         
     else:
         if keys[pygame.K_b]:
-            bubSort(screen)
+            bubSort(screen, elemType)
         elif keys[pygame.K_s]:
-            selSort(screen)
+            selSort(screen, elemType)
         elif keys[pygame.K_q]:
-            quickSort(nosDict['randNos'], nosDict['colorNos'], 0, len(nosDict['randNos']) - 1, screen)
+            quickSort(nosDict['randNos'], nosDict['colorNos'], 0, len(nosDict['randNos']) - 1, screen, elemType)
         elif keys[pygame.K_i]:
-            insSort(screen)
+            insSort(screen, elemType)
         elif keys[pygame.K_c]:
-            countSort(screen)
+            countSort(screen, elemType)
         
 pygame.quit()

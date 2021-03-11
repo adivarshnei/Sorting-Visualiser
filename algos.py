@@ -1,7 +1,7 @@
 from prereq import *
 from methods import *
 
-def bubSort(displayType):
+def bubSort(displayType, elementType):
     for i in range(len(nosDict['randNos'])):
         swapStat = False
         
@@ -15,14 +15,14 @@ def bubSort(displayType):
             
             displayType.fill((0, 0, 0))
             
-            drawElem(elemType, nosDict['randNos'], displayType)
+            drawElem(elementType, nosDict['randNos'], displayType)
             
             pygame.display.update()
         
         if swapStat == False:
             break
 
-def selSort(displayType):
+def selSort(displayType, elementType):
     for i in range(len(nosDict['randNos'])):
         minIndex = i
         
@@ -39,12 +39,12 @@ def selSort(displayType):
         
         displayType.fill((0, 0, 0))
         
-        drawElem(elemType, nosDict['randNos'], displayType)
+        drawElem(elementType, nosDict['randNos'], displayType)
         
         pygame.time.delay(15)
         pygame.display.update()
         
-def partition(arr, colArr, low, high, displayType):
+def partition(arr, colArr, low, high, displayType, elementType):
     i = low - 1
     pivot = arr[high]
     
@@ -56,7 +56,7 @@ def partition(arr, colArr, low, high, displayType):
             
             displayType.fill((0, 0, 0))
             
-            drawElem(elemType, nosDict['randNos'], displayType)
+            drawElem(elementType, nosDict['randNos'], displayType)
             
             pygame.time.delay(15)
             pygame.display.update()
@@ -66,13 +66,13 @@ def partition(arr, colArr, low, high, displayType):
     
     displayType.fill((0, 0, 0))
     
-    drawElem(elemType, nosDict['randNos'], displayType)
+    drawElem(elementType, nosDict['randNos'], displayType)
     
     pygame.display.update()
     
     return i + 1
 
-def quickSort(arr, colArr, low, high, displayType):
+def quickSort(arr, colArr, low, high, displayType, elementType):
     if low < high:
         pi = partition(arr, colArr, low, high, displayType)
         drawLine(pi, displayType)
@@ -83,7 +83,7 @@ def quickSort(arr, colArr, low, high, displayType):
         quickSort(arr, colArr, low, pi - 1, displayType)
         quickSort(arr, colArr, pi + 1, high, displayType)
 
-def insSort(displayType):
+def insSort(displayType, elementType):
     for i in range(len(nosDict['randNos'])):
         key = nosDict['randNos'][i]
         colKey = nosDict['colorNos'][i]
@@ -97,7 +97,7 @@ def insSort(displayType):
             
             displayType.fill((0, 0, 0))
             
-            drawElem(elemType, nosDict['randNos'], displayType)
+            drawElem(elementType, nosDict['randNos'], displayType)
             
             pygame.time.delay(15)
             pygame.display.update()
@@ -112,12 +112,12 @@ def insSort(displayType):
         
         displayType.fill((0, 0, 0))
         
-        drawElem(elemType, nosDict['randNos'], displayType)
+        drawElem(elementType, nosDict['randNos'], displayType)
         
         pygame.time.delay(15)
         pygame.display.update()
 
-def countSort(displayType):
+def countSort(displayType, elementType):
     colNosTup = []
     
     for i in range(len(nosDict['randNos'])):
@@ -148,7 +148,7 @@ def countSort(displayType):
         
         displayType.fill((0, 0, 0))
         
-        drawElem(elemType, nosDict['randNos'], displayType)
+        drawElem(elementType, nosDict['randNos'], displayType)
         
         pygame.time.delay(15)
         pygame.display.update()
