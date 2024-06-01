@@ -1,6 +1,7 @@
 import pygame
 import random
 import keyboard
+import sys
 
 # dimensions = [1920, 1020] # Full Screen Windowed
 # dimensions = [1920, 1080] # Full Screen
